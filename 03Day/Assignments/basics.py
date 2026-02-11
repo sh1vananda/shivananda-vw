@@ -17,13 +17,13 @@ print(f"number of classes required: {len(set(l2))}")
 
 # 3. WAP to enter marks of 3 subjects from the user and store them in a dictionary. Start with an empty dictionary & add one by one. Use subject name as key & marks as value.
 
-# marks = {}
+marks = {}
 
-# for i in range(3):
-#     key, value = input(f"enter subject {i + 1} name followed by marks: ").split()
-#     marks[key] = value
+for i in range(3):
+    key, value = input(f"enter subject {i + 1} name followed by marks: ").split()
+    marks[key] = value
 
-# print(marks)
+print(marks)
 
 # 4. Figure out a way to store 9 & 9.0 as separate values in the set. 
 # (You can take help of built-in data types) 

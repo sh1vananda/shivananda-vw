@@ -1,8 +1,3 @@
-# 1)  Concatenate two lists in the following order by using list comprehension
-# Input:- list1 = ["Hello ", "take "]
-# list2 = ["Dear", "Sir"]
-# Output:- [’Hello Dear’, ’Hello Sir’, ’take Dear’, ’take Sir’]
-
 def concat(l1, l2):
     # res = []
     # for w1 in l1:
