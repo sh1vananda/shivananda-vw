@@ -1,4 +1,7 @@
-""" Shivananda Reddy Kankanala """
+"""
+Shivananda Reddy Kankanala
+Description: Command line shopping list application with quantities, search, clear, sorted display, and data persistence
+"""
 
 import os
 
@@ -18,17 +21,17 @@ Enter "REMOVE" to remove a product
 Enter "SEARCH" to search for items
 Enter "CLEAR" clear list""")
         
-    def parse_item(self, text):
+    def parse_item(self, text): # added a utility function to handle quantity in entry (eg. Milk x2)
         """ handle quantities """
         parts = text.strip().split("x")
 
         item_name = parts[0].strip().capitalize()
 
-        item_quantity = 1
+        item_quantity = 1 # default quantity
 
-        if len(parts) > 1:
+        if len(parts) > 1: # if explicity mentioned more update default quantity
             item_quantity = int(parts[1].strip())
-            if item_quantity <= 0:
+            if item_quantity <= 0: # handle a 0 in quantity entry.
                 item_quantity = 1
         
         return item_name, item_quantity
@@ -40,12 +43,12 @@ Enter "CLEAR" clear list""")
             print("Item cannot be empty")
             return 
         if name in self.items:
-            print(f"{name} already in list, update quantity?")
+            print(f"{name} already in list, update quantity?") # since quantity is implemented, duplicate entries are handles differently
             choice = input("(Y/N): ")
-            if choice.lower() == "y":
+            if choice.lower() == "y": # confirm if they want to update quantity
                 self.items[name] += quantity
             else:
-                print(f"{name} already in list, quantity not updated")
+                print(f"{name} already in list, quantity not updated") # if not fall back to not adding/modifying the item
         else:
             self.items[name] = quantity
     
@@ -88,16 +91,19 @@ Enter "CLEAR" clear list""")
             print("Empty")
             return
         for item in sorted(self.items):
-            qty = self.items[item]
+            qty = self.items[item] # handle quanity 
             if qty > 1:
-                print(f"> {item} x{qty}")
+                print(f"- {item} x{qty}")
             else:
-                print(f"> {item}")
+                print(f"- {item}")
         
     def save_items(self):
-        with open(self.file, "w") as f: # avoiding append mode to prevent duplicates on rerun
-            for item in self.items:
-                f.write(f"{item} | {self.items[item]}\n")
+        try:
+            with open(self.file, "w") as f: # avoiding append mode to prevent duplicates on rerun
+                for item in self.items:
+                    f.write(f"{item} | {self.items[item]}\n")
+        except OSError:
+            print("Error saving list")
 
     def load_items(self):
         try:
@@ -110,7 +116,10 @@ Enter "CLEAR" clear list""")
                     name = parts[0].strip()
                     quantity = int(parts[1].strip()) if len(parts) > 1 else 1
                     self.items[name] = quantity
-        except Exception as e:
+        except FileNotFoundError:
+            self.items = {}
+        except OSError:
+            print("Error loading list")
             self.items = {}
 
 # ---
@@ -146,8 +155,8 @@ def main():
                     shopping_list.clear_list()
                 case _:
                     shopping_list.add_to_list(command)
-    except Exception as e:
-        print(f"{e}")
+    except EOFError:
+        print("\nExiting...")
     finally:
         shopping_list.save_items()
         print(f"Shopping list saved to shopping_list.txt")
