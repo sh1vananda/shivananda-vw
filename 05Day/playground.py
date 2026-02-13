@@ -1,4 +1,7 @@
-# f = open("text.txt", "r") # modes - r, w, a, x, b
+# .txt, .csv
+# read, write, merge, remove
+
+# f = open("text.txt", "r") # modes - r, w, a, x, b, r+, w+
 # data = f.read()
 # print(data)
 # f.close()

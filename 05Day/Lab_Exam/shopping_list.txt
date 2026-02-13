@@ -1,0 +1,2 @@
+Coffee | 1
+Tea | 2
