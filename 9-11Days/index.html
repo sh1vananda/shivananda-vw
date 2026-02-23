@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="HTML practice document" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">HTML</div>
+            <nav>
+                <a href="#section1">S1</a>
+                <a href="#section2">S2</a>
+                <a href="#section3">S3</a>
+                <a href="#section4">S4</a>
+                <a href="#section5">S5</a>
+                <a href="#section6">S6</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="section1">
+                <h1>One</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odit praesentium tempora nesciunt suscipit ab excepturi
+                    ipsum odio qui doloremque consequatur sunt error atque,
+                    accusamus animi quidem provident, cum culpa distinctio.
+                </p>
+
+                <h2>Two</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aliquam maiores amet recusandae dicta incidunt repellat odio
+                    unde accusamus est repudiandae, a iure sed nisi laudantium,
+                    aspernatur dignissimos vero rerum minima.
+                </p>
+
+                <blockquote>"He who has, has."</blockquote>
+
+                <code>let x = 10;</code>
+            </section>
+
+            <section id="section2">
+                <h3>Three</h3>
+
+                <ul>
+                    <li>foo</li>
+                    <li>bar</li>
+                    <li>baz</li>
+                </ul>
+
+                <ol>
+                    <li>foo</li>
+                    <li>bar</li>
+                    <li>baz</li>
+                </ol>
+
+                <progress value="70" max="100"></progress>
+            </section>
+
+            <section id="section3">
+                <h4>Four</h4>
+                <table>
+                    <caption>
+                        Table
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">foo</th>
+                            <th scope="col">bar</th>
+                            <th scope="col">baz</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <details>
+                    <summary>Expand</summary>
+                    expandable content
+                </details>
+            </section>
+
+            <section id="section4">
+                <figure>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/500px-Cat_November_2010-1a.jpg"
+                        alt="cat"
+                        width="300"
+                        height="400"
+                        loading="lazy"
+                    />
+                </figure>
+
+                <video controls muted autoplay loop width="320" height="240">
+                    <source
+                        src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+            </section>
+
+            <section id="section5">
+                <form action="https://www.google.com/search" method="get">
+                    <label for="search">Search</label>
+                    <input
+                        name="q"
+                        id="search"
+                        type="search"
+                        autocomplete="off"
+                        placeholder="Search..."
+                        required
+                    />
+                    <button type="submit">Search</button>
+                </form>
+
+                <h2>Positions</h2>
+
+                <div class="positions">
+                    <div class="box static">static</div>
+                    <div class="box relative">relative</div>
+                    <div class="box absolute">absolute</div>
+                    <div class="box fixed">fixed</div>
+                    <div class="box sticky-box">sticky</div>
+                </div>
+
+                <h2>Flex Examples</h2>
+
+                <div class="flex-row">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                </div>
+
+                <div class="flex-column">
+                    <div class="box">A</div>
+                    <div class="box">B</div>
+                    <div class="box">C</div>
+                </div>
+
+                <div class="flex-space">
+                    <div class="box">Left</div>
+                    <div class="box">Center</div>
+                    <div class="box">Right</div>
+                </div>
+
+                <div class="grid-demo">
+                    <div class="box">foo</div>
+                    <div class="box">bar</div>
+                    <div class="box">baz</div>
+                    <div class="box">qux</div>
+                </div>
+            </section>
+
+            <section id="section6">
+                <div class="flex-row">
+                    <button onclick="showAlert()">Alert</button>
+                    <button onclick="goToTop()">Scroll To Top</button>
+                    <button onclick="openSite()">Open Tab</button>
+                </div>
+
+                <div class="flex-row">
+                    <button id="decrement">-</button>
+                    <div id="count" class="box">0</div>
+                    <button id="increment">+</button>
+                    <button id="reset">Reset</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            Visit
+            <a href="https://www.w3schools.com" target="_blank">W3Schools</a>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
