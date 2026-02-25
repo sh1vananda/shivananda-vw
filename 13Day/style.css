@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 1s ease;
+}
+
+div {
+    position: absolute;
+    font-size: 100px;
+}
+
+#blast {
+    display: none;
+    z-index: 10;
+}
+
+#play {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 30px;
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    display: none;
+}
