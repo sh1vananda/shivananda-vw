@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 10px;
+        }
+        .stats {
+            width: 180px;
+            border: 1px solid black;
+            padding-left: 10px;
+            background-color: gainsboro;
+        }
+        .flagged {
+            border-left: 5px solid red;
+            padding-left: 5px
+        }
+        .long {
+            border: 1px solid black;
+            background-color:gainsboro;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Comments ({{total}})</h2>
+    <div class="stats">
+        <p>Flagged comments: {{flagged_count}}</p>
+        <p>Most liked: {{most_liked.username}}</p>
+        <p>Users: {{usernames}}</p>
+    </div>
+    {% for c in comments %}
+        {% set text = c.comment | trim | replace("dumb", "***") | replace("stupid", "***") %}
+        <div class="{% if c.flagged %}flagged{% endif %}">
+            <h3>{{c.username}}</h3>
+            <p>{{ text }}</p>
+            <p>Likes: {{ c.likes }}</p>
+            {% if c.likes > 100 %}
+                <span>trending</span>
+            {% endif %}
+            {% if text | length > 200 %}
+                <span class="long">long comment</span>
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>

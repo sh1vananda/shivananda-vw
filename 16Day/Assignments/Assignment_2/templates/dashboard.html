@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{role | capitalize}}</title>
+    <style>
+        * {
+            font-family: monospace;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{role | capitalize}} Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                {% if role in ["admin", "manager"] %}
+                    <th>Salary</th>
+                    {% if role == "admin" %}
+                        <th>Actions</th>
+                    {% endif %}
+                {% endif %}                
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{employee.name}}</td>
+                <td>{{employee.department}}</td>
+                {% if role in ["admin", "manager"] %}
+                    <td>{{employee.salary}}</td>
+                    {% if role == "admin" %}
+                        <td><button>Delete</button></td>
+                    {% endif %}
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

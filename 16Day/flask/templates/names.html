@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} Names {% endblock %}
+
+{% block content %}
+<h2>Names: </h2>
+{% for i in range(names | length) %}
+    <p>{{i + 1}}. {{ names[i] | trim | title }}</p>
+{% endfor %}
+{% endblock %}
