@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>Products</h3>
+  <div class="products">
+    {% for p in products %}
+      <div class="item">
+        <div>
+          <b>{{ p.name }}</b><br>
+          {{ p.price }}
+        </div>
+        <br>
+        <a href="{{ url_for('products.add_to_cart', pid=p.id) }}">Add</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

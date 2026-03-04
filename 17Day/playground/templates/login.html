@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="post" action="{{url_for('auth.submit')}}">
+        <div>
+            <label>
+                username:
+                <br>
+                <input type="text" name="username">
+            </label>
+            <label>
+                email:
+                <br>
+                <input type="text" name="email">
+            </label>
+            <label>
+                password:
+                <br>
+                <input type="password" name="password">
+            </label>
+            <button type="submit">submit</button>
+        </div>
+    </form>
+    <p>{{message}}</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>Your Cart</h3>
+  {% if items %}
+    <div class="cart">
+      {% for i in items %}
+        <div class="item">
+          <div>
+            <b>{{ i.name }}</b><br>
+            {{ i.price }}
+          </div>
+          <div class="actions">
+            <a href="{{ url_for('cart.dec', pid=i.id) }}">-</a>
+            <span>{{ i.qty }}</span>
+            <a href="{{ url_for('cart.inc', pid=i.id) }}">+</a>
+          </div>
+          <div>{{ i.subtotal }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="summary">
+      <b>Total {{ total }}</b>
+      <a href="{{ url_for('cart.clear') }}">Clear</a>
+    </div>
+  {% else %}
+    <p>Cart is empty</p>
+  {% endif %}
+{% endblock %}
