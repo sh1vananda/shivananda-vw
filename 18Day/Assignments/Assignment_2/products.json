@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Projector",
+    "price": 1242.7,
+    "stock": 47
+  },
+  {
+    "name": "Jeans",
+    "price": 1844.45,
+    "stock": 46
+  },
+  {
+    "name": "Laptop",
+    "price": 1614.1,
+    "stock": 26
+  },
+  {
+    "name": "Projector",
+    "price": 1715.25,
+    "stock": 40
+  },
+  {
+    "name": "Jeans",
+    "price": 913.74,
+    "stock": 40
+  },
+  {
+    "name": "Projector",
+    "price": 221.73,
+    "stock": 3
+  },
+  {
+    "name": "Tee",
+    "price": 1168.83,
+    "stock": 18
+  },
+  {
+    "name": "Mouse",
+    "price": 1454.39,
+    "stock": 8
+  },
+  {
+    "name": "Jeans",
+    "price": 199.63,
+    "stock": 48
+  },
+  {
+    "name": "Keyboard",
+    "price": 1115.13,
+    "stock": 38
+  },
+  {
+    "name": "Projector",
+    "price": 732.15,
+    "stock": 38
+  },
+  {
+    "name": "Phone",
+    "price": 580.15,
+    "stock": 36
+  },
+  {
+    "name": "Tee",
+    "price": 161.0,
+    "stock": 18
+  },
+  {
+    "name": "Headphones",
+    "price": 214.66,
+    "stock": 31
+  },
+  {
+    "name": "Tee",
+    "price": 754.44,
+    "stock": 24
+  },
+  {
+    "name": "Jeans",
+    "price": 1869.14,
+    "stock": 10
+  },
+  {
+    "name": "Jeans",
+    "price": 956.14,
+    "stock": 14
+  },
+  {
+    "name": "Laptop",
+    "price": 1044.6,
+    "stock": 32
+  },
+  {
+    "name": "Mouse",
+    "price": 871.32,
+    "stock": 7
+  },
+  {
+    "name": "Laptop",
+    "price": 1397.38,
+    "stock": 49
+  },
+  {
+    "name": "Phone",
+    "price": 1256.36,
+    "stock": 32
+  }
+]

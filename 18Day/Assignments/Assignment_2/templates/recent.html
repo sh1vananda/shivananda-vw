@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>RECENTLY VIEWED</h2>
+
+<ul>
+    {% for p in products %}
+    <li>
+        <a href="{{url_for('products.view_product', pid=p.id)}}">
+            {{p.name}}
+        </a>
+    </li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

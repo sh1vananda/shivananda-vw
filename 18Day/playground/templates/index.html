@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 18</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>POSTS</h2>
+    {% for post in posts %}
+    <div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+
+    <h2>USERS</h2>
+
+    <ul id="users"></ul>
+
+    <script>
+        const getUsers = async () => {
+            const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+            const users = response.data
+            console.log(users)
+            const list = document.getElementById("users")
+
+            users.forEach(user => {
+                const li = document.createElement("li")
+                li.textContent = user.name + " - " + user.email
+                list.appendChild(li)
+            });
+        }
+        getUsers()
+    </script>
+</body>
+</html>
