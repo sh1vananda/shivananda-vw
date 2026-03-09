@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+ 
+    <h2>Add Order</h2>
+    
+    <form action="/orders" method="post">
+        Product <input name="product_name">
+        Quantity <input name="quantity">
+        Price <input name="price">
+        <button type="submit">Add</button>
+    </form>
+ 
+    <h2>Orders</h2>
+
+    <ul>
+        {% for o in orders %}
+        <li>
+            {{o.product_name}} | Qty: {{o.quantity}} | Price: {{o.price}} | Revenue: {{o.price * o.quantity}}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/orders/revenue">Show Total Revenue</a><br>
+    <a href="/orders/high">Orders with Revenue > 2000</a>
+ 
+{% endblock %}
