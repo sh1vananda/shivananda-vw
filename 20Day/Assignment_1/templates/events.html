@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+ 
+    <h2>Create Event</h2>
+
+    <form action="/events" method="post">
+        Name <input name="name">
+        Seats <input name="total_seats">
+        <button type="submit">Create</button>
+    </form>
+
+    <h2>Events</h2>
+
+    <ul>
+        {% for e in events %}
+    <li>
+
+    {{e.name}} | Seats: {{e.available_seats}} / {{e.total_seats}}
+
+    <form action="/register/{{e.id}}" method="post">
+        <input name="user_name" placeholder="username">
+        <button type="submit">Register</button>
+    </form>
+
+    </li>
+        {% endfor %}
+    </ul>
+ 
+{% endblock %}
