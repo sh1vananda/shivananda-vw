@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+ 
+    <h2>Employee Profile</h2>
+    
+    <form method="post">
+    
+        Name <input name="name" value="{{emp.name}}"><br>
+        Email <input name="email" value="{{emp.email}}"><br>
+        Department <input name="department" value="{{emp.department}}"><br>
+    
+        <button type="submit">Save</button>
+    
+    </form>
+    
+    <a href="/employee/{{emp.id}}/delete">Delete</a>
+    
+{% endblock %}

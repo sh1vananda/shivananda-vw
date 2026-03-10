@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+    
+    <h2>Employees</h2>
+    
+    <ul>
+        {% for e in employees %}
+        <li>
+            <a href="/employee/{{e.id}}">
+                {{e.name}} - {{e.department}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+ 
+{% endblock %}
